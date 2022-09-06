@@ -3,7 +3,7 @@ import 'package:ecom_shoe/screens/home/homePage.dart';
 import 'package:flutter/material.dart';
 
 class Begin extends StatelessWidget {
-  Begin({Key? key}) : super(key: key);
+  const Begin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class Begin extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "LIVE YOUR \n PERFECT",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -53,7 +53,7 @@ class Begin extends StatelessWidget {
                       SizedBox(
                         height: size.height * 0.02,
                       ),
-                      Text(
+                      const Text(
                         "Smart, gorgeous & fasionable \ncollection makes you cool",
                         textAlign: TextAlign.center,
                         style: TextStyle(

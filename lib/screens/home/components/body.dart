@@ -1,3 +1,4 @@
+import 'package:ecom_shoe/screens/home/description.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -21,7 +22,7 @@ class Body extends StatelessWidget {
                 SizedBox(
                   height: size.height * .01,
                 ),
-                CategoryDivider(),
+                const CategoryDivider(),
                 SizedBox(
                   height: size.height * .01,
                 ),
@@ -50,27 +51,27 @@ class ProductGrid extends StatelessWidget {
         crossAxisCount: 2,
       ),
       children: [
-        product(
+        Product(
             size: size,
             title: "Creter Impact",
             image: "assets/images/7.png",
             price: 450),
-        product(
+        Product(
             size: size,
             title: "Office Wear",
             image: "assets/images/1.png",
             price: 599),
-        product(
+        Product(
             size: size,
             title: "Running Boot",
             image: "assets/images/2.png",
             price: 550),
-        product(
+        Product(
             size: size,
             title: "Branded Impact",
             image: "assets/images/3.png",
             price: 750),
-        product(
+        Product(
             size: size,
             title: "Basketball",
             image: "assets/images/4.png",
@@ -92,7 +93,7 @@ class CategoryDivider extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Text(
               "New Men's",
               style: TextStyle(
@@ -125,7 +126,7 @@ class CategoryScroll extends StatelessWidget {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: SafeArea(
-          child: Container(
+          child: SizedBox(
             height: size.height * .09,
             // color: Colors.black,
             child: Row(
@@ -170,8 +171,8 @@ class CategoryScroll extends StatelessWidget {
   }
 }
 
-class product extends StatelessWidget {
-  const product({
+class Product extends StatelessWidget {
+  const Product({
     Key? key,
     required this.size,
     required this.title,
@@ -206,23 +207,23 @@ class product extends StatelessWidget {
                     fit: BoxFit.fitHeight,
                   ),
                 ),
-                Text(
+                const Text(
                   "Mens's Shoes",
                   style: TextStyle(color: Colors.orange),
                 ),
                 Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
                   "₹ $price",
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 16),
@@ -234,13 +235,13 @@ class product extends StatelessWidget {
             // color: Colors.red,
             height: 30,
             width: 30,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.black,
               borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(20),
                   topLeft: Radius.circular(10)),
             ),
-            child: Center(
+            child: const Center(
               child: Text(
                 "+",
                 style: TextStyle(color: Colors.white, fontSize: 20),
@@ -265,9 +266,9 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(2.5),
+      margin: const EdgeInsets.all(2.5),
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 247, 108, 15),
+          color: const Color.fromARGB(255, 247, 108, 15),
           borderRadius: BorderRadius.circular(20)),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -275,17 +276,17 @@ class Categories extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-              decoration:
-                  BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+              decoration: const BoxDecoration(
+                  color: Colors.white, shape: BoxShape.circle),
               child: Image.asset(icon),
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
             Text(
               catergory,
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.white),
             )
           ],
         ),
@@ -310,7 +311,7 @@ class Advertisment extends StatelessWidget {
         decoration: BoxDecoration(
             // color: Colors.black,
             borderRadius: BorderRadius.circular(15),
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
                 begin: Alignment(0.9, 0.1),
                 end: Alignment(0.9, 0.8),
                 colors: [
@@ -325,11 +326,11 @@ class Advertisment extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "New Release",
                     style: TextStyle(color: Colors.white),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Text(
                       "Nike Air \n Max 90",
                       style: TextStyle(
@@ -339,8 +340,13 @@ class Advertisment extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
+                    onPressed: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const Description())))
+                    },
+                    child: const Text(
                       "Shop Now",
                     ),
                   )

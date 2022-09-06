@@ -1,6 +1,5 @@
-import 'package:ecom_shoe/screens/home/description.dart';
-
 import 'components/body.dart';
+import 'package:ecom_shoe/screens/home/description.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,13 +33,15 @@ class HomePage extends StatelessWidget {
           width: 50,
           child: FloatingActionButton(
               onPressed: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Description()))
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Description()))
                   },
-              backgroundColor: Color.fromARGB(255, 247, 108, 15),
+              backgroundColor: const Color.fromARGB(255, 247, 108, 15),
               child: Image.asset("assets/icons/home.png")),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-        body: Body());
+        body: const Body());
   }
 }

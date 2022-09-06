@@ -19,16 +19,19 @@ class Description extends StatelessWidget {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.arrow_back_ios_new_rounded,
-                        color: Colors.black,
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: const Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          color: Colors.black,
+                        ),
                       ),
-                      Text(
+                      const Text(
                         "Men's Shoes",
                         style: TextStyle(
                             color: kTextColor, fontWeight: FontWeight.bold),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.shopping_bag_outlined,
                         color: Colors.black,
                       )
@@ -39,7 +42,7 @@ class Description extends StatelessWidget {
                 Container(
                   height: size.height * .4,
                   width: double.infinity,
-                  padding: EdgeInsets.all(30),
+                  padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
                       color: Colors.blue.withOpacity(.1),
                       borderRadius: BorderRadius.circular(20)),
@@ -55,7 +58,7 @@ class Description extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
-                      children: [
+                      children: const [
                         Text(
                           "Nike Air Max Pre-Day",
                           textAlign: TextAlign.left,
@@ -71,11 +74,11 @@ class Description extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.star,
                             color: Color.fromARGB(131, 0, 3, 173),
                           ),
-                          Text(
+                          const Text(
                             " 5.0 ",
                             style: TextStyle(
                               color: Colors.black,
@@ -97,7 +100,7 @@ class Description extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.black.withOpacity(.5),
                               fontSize: 13),
-                          children: <InlineSpan>[
+                          children: const <InlineSpan>[
                             TextSpan(
                                 text: 'Read More',
                                 style: TextStyle(
@@ -108,7 +111,7 @@ class Description extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: Row(
-                        children: [
+                        children: const [
                           Text(
                             "Select Color :",
                             style: TextStyle(
@@ -122,26 +125,24 @@ class Description extends StatelessWidget {
                     SafeArea(
                         child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      child: Container(
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SelectColor(
-                                  size: size, image: "assets/images/1.png"),
-                              SelectColor(
-                                  size: size, image: "assets/images/2.png"),
-                              SelectColor(
-                                  size: size, image: "assets/images/3.png"),
-                              SelectColor(
-                                  size: size, image: "assets/images/4.png"),
-                              SelectColor(
-                                  size: size, image: "assets/images/5.png"),
-                              SelectColor(
-                                  size: size, image: "assets/images/6.png"),
-                              SelectColor(
-                                  size: size, image: "assets/images/7.png"),
-                            ]),
-                      ),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SelectColor(
+                                size: size, image: "assets/images/1.png"),
+                            SelectColor(
+                                size: size, image: "assets/images/2.png"),
+                            SelectColor(
+                                size: size, image: "assets/images/3.png"),
+                            SelectColor(
+                                size: size, image: "assets/images/4.png"),
+                            SelectColor(
+                                size: size, image: "assets/images/5.png"),
+                            SelectColor(
+                                size: size, image: "assets/images/6.png"),
+                            SelectColor(
+                                size: size, image: "assets/images/7.png"),
+                          ]),
                     )),
                     SizedBox(
                       height: size.height * 0.02,
@@ -149,7 +150,7 @@ class Description extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           "Size : ",
                           textAlign: TextAlign.left,
                           style: TextStyle(
@@ -159,7 +160,7 @@ class Description extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text(
+                            const Text(
                               "IND",
                               style: TextStyle(
                                   color: Colors.black,
@@ -243,7 +244,7 @@ class Description extends StatelessWidget {
                                     text: "Price \n",
                                     style: TextStyle(
                                         color: Colors.white.withOpacity(.6)),
-                                    children: [
+                                    children: const [
                                   TextSpan(
                                     text: "₹ 1399.50",
                                     style: TextStyle(
@@ -256,7 +257,7 @@ class Description extends StatelessWidget {
                               decoration: BoxDecoration(
                                   color: kTextColor,
                                   borderRadius: BorderRadius.circular(30)),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   "Add to Bag",
                                   style: TextStyle(
@@ -291,7 +292,7 @@ class SizeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       height: size.height * .07,
       width: size.height * .07,
       decoration: BoxDecoration(
@@ -299,7 +300,7 @@ class SizeWidget extends StatelessWidget {
       child: Center(
         child: Text(
           "$showSize",
-          style: TextStyle(color: Colors.white, fontSize: 22),
+          style: const TextStyle(color: Colors.white, fontSize: 22),
         ),
       ),
     );
@@ -319,7 +320,7 @@ class SelectColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
       height: size.height * .12,
       width: size.height * .12,
       decoration: BoxDecoration(

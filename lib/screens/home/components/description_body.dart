@@ -8,7 +8,7 @@ class DescriptionBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(children: [
+        Row(children: const [
           Icon(
             Icons.arrow_back_ios_new_rounded,
             color: Colors.black,
